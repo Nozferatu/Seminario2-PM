@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio4
+package com.cmj.seminario2_pm
 
 class Estudiante (
     var nombre: String,

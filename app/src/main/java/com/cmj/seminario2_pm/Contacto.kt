@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio3
+package com.cmj.seminario2_pm
 
 class Contacto(var nombre: String,
                var telefono: Int,

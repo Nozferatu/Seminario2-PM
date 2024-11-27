@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio1
+package com.cmj.seminario2_pm
 
 class SistemaSolar (var planetas: MutableList<Planeta> = mutableListOf()){
     fun planetaMayor(): Planeta?{

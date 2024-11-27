@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio14
+package com.cmj.seminario2_pm
 
 open class Circunferencia(
     var radio: Double

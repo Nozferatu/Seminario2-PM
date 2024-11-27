@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio2
+package com.cmj.seminario2_pm
 
 import kotlin.math.pow
 

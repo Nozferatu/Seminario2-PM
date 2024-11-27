@@ -1,4 +1,4 @@
-package com.cmj.seminario2_pm.ejercicio5
+package com.cmj.seminario2_pm
 
 class Producto(
     var nombre: String,
