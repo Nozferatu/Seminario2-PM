@@ -375,7 +375,37 @@ fun main(){
         }
 
         11 -> {
+            println("A")
+        }
 
+        12 -> {
+            var listaEquiposFutbol: MutableList<EquipoFutbol> = mutableListOf(
+                EquipoFutbol("Atlético", "España"),
+                EquipoFutbol("Celta", "España"),
+                EquipoFutbol("Betis", "España"),
+                EquipoFutbol("Real Madrid", "España"),
+                EquipoFutbol("Manchester City", "Inglaterra"),
+                EquipoFutbol("Chelsea", "Inglaterra"),
+                EquipoFutbol("Liverpool", "Inglaterra"),
+                EquipoFutbol("Arsenal", "Inglaterra"),
+                EquipoFutbol("Juventus", "Italia"),
+                EquipoFutbol("Atalanta", "Italia"),
+                EquipoFutbol("Inter", "Italia"),
+                EquipoFutbol("Pyunik", "Armenia"),
+                EquipoFutbol("Al-Nassr", "Arabia Saudita"),
+                EquipoFutbol("Al-Hilal SFC", "Arabia Saudita"),
+                EquipoFutbol("B. Dortmund", "Alemania"),
+                EquipoFutbol("Bayern München", "Alemania")
+            )
+        }
+
+        16 -> {
+            val mates = Matematicas()
+
+            println(mates.sumar(4, 5))
+            println(mates.restar(4, 5))
+            println(mates.multiplicar(4, 5))
+            println(mates.dividir(4f, 5f))
         }
     }
 }
