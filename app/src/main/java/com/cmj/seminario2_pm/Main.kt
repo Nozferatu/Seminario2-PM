@@ -295,6 +295,86 @@ fun main(){
         }
 
         6 -> {
+            var planetasSistemaSolar = SistemaSolar(mutableListOf(
+                Planeta("Mercurio", "Rocoso", 0f),
+                Planeta("Venus", "Rocoso", 0f),
+                Planeta("Tierra", "Rocoso", 0f),
+                Planeta("Marte", "Rocoso", 0f),
+                Planeta("Júpiter", "Gaseoso", 0f),
+                Planeta("Saturno", "Gaseoso", 0f),
+                Planeta("Urano", "Gaseoso", 0f),
+                Planeta("Neptuno", "Gaseoso", 0f)
+            ))
+        }
+
+        7 -> {
+            var planetasSistemaSolar = SistemaSolar(mutableListOf(
+                Planeta("Mercurio", "Rocoso", 0f),
+                Planeta("Venus", "Rocoso", 0f),
+                Planeta("Tierra", "Rocoso", 0f),
+                Planeta("Marte", "Rocoso", 0f),
+                Planeta("Júpiter", "Gaseoso", 0f),
+                Planeta("Saturno", "Gaseoso", 0f),
+                Planeta("Urano", "Gaseoso", 0f),
+                Planeta("Neptuno", "Gaseoso", 0f)
+            ))
+
+            planetasSistemaSolar.planetas.forEach{ planeta ->
+                println(planeta)
+            }
+        }
+
+        8 -> {
+            var planetasSistemaSolar = SistemaSolar(mutableListOf(
+                Planeta("Mercurio", "Rocoso", 0f),
+                Planeta("Venus", "Rocoso", 0f),
+                Planeta("Tierra", "Rocoso", 0f),
+                Planeta("Marte", "Rocoso", 0f),
+                Planeta("Júpiter", "Gaseoso", 0f),
+                Planeta("Saturno", "Gaseoso", 0f),
+                Planeta("Urano", "Gaseoso", 0f),
+                Planeta("Neptuno", "Gaseoso", 0f)
+            ))
+
+            planetasSistemaSolar.planetas.forEach { planeta ->
+                if(planeta.nombre.startsWith("M")) println(planeta)
+            }
+        }
+
+        9 -> {
+            var planetasSistemaSolar = SistemaSolar(mutableListOf(
+                Planeta("Mercurio", "Rocoso", 0f),
+                Planeta("Venus", "Rocoso", 0f),
+                Planeta("Tierra", "Rocoso", 1f),
+                Planeta("Marte", "Rocoso", 0f),
+                Planeta("Júpiter", "Gaseoso", 25f),
+                Planeta("Saturno", "Gaseoso", 20f),
+                Planeta("Urano", "Gaseoso", 0f),
+                Planeta("Neptuno", "Gaseoso", 0f)
+            ))
+
+            var tierra = planetasSistemaSolar.planetas[2]
+            planetasSistemaSolar.planetas.forEach{ planeta ->
+                if(planeta.masa > tierra.masa * 20f) println(planeta)
+            }
+        }
+
+        10 -> {
+            var planetasSistemaSolar = SistemaSolar(mutableListOf(
+                Planeta("Mercurio", "Rocoso", 0f),
+                Planeta("Venus", "Rocoso", 0f),
+                Planeta("Tierra", "Rocoso", 1f),
+                Planeta("Marte", "Rocoso", 0f),
+                Planeta("Júpiter", "Gaseoso", 25f),
+                Planeta("Saturno", "Gaseoso", 20f),
+                Planeta("Urano", "Gaseoso", 0f),
+                Planeta("Neptuno", "Gaseoso", 0f)
+            ))
+
+            println(planetasSistemaSolar.masaMedia())
+        }
+
+        11 -> {
 
         }
     }
