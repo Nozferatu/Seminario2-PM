@@ -422,6 +422,14 @@ fun main(){
             championsLeague(listaEquiposFutbol)
         }
 
+        14 -> {
+            val circu1 = Circunferencia(5.0)
+        }
+
+        15 -> {
+            val circu2 = Circulo(arrayOf(0, 0), arrayOf(2, 3), "Amarillo")
+        }
+
         16 -> {
             val mates = Matematicas()
 
