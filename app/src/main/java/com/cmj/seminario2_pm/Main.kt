@@ -375,7 +375,7 @@ fun main(){
         }
 
         11 -> {
-            println("A")
+            EquipoFutbol()
         }
 
         12 -> {
@@ -399,6 +399,29 @@ fun main(){
             )
         }
 
+        13 -> {
+            var listaEquiposFutbol: MutableList<EquipoFutbol> = mutableListOf(
+                EquipoFutbol("Atlético", "España"),
+                EquipoFutbol("Celta", "España"),
+                EquipoFutbol("Betis", "España"),
+                EquipoFutbol("Real Madrid", "España"),
+                EquipoFutbol("Manchester City", "Inglaterra"),
+                EquipoFutbol("Chelsea", "Inglaterra"),
+                EquipoFutbol("Liverpool", "Inglaterra"),
+                EquipoFutbol("Arsenal", "Inglaterra"),
+                EquipoFutbol("Juventus", "Italia"),
+                EquipoFutbol("Atalanta", "Italia"),
+                EquipoFutbol("Inter", "Italia"),
+                EquipoFutbol("Pyunik", "Armenia"),
+                EquipoFutbol("Al-Nassr", "Arabia Saudita"),
+                EquipoFutbol("Al-Hilal SFC", "Arabia Saudita"),
+                EquipoFutbol("B. Dortmund", "Alemania"),
+                EquipoFutbol("Bayern München", "Alemania")
+            )
+
+            championsLeague(listaEquiposFutbol)
+        }
+
         16 -> {
             val mates = Matematicas()
 
@@ -420,5 +443,33 @@ fun main(){
             println(guerrero)
             println(mago)
         }
+    }
+}
+
+fun championsLeague(equipos: List<EquipoFutbol>){
+    var sorteoOctavos: MutableMap<EquipoFutbol, EquipoFutbol> = mutableMapOf()
+    var equipo1: EquipoFutbol
+    var equipo2: EquipoFutbol
+
+    while(sorteoOctavos.size < 8){
+        equipo1 = equipos[equipos.indices.random()]
+
+        if(sorteoOctavos.isNotEmpty()){
+            while(sorteoOctavos.containsKey(equipo1) || sorteoOctavos.containsValue(equipo1)){
+                equipo1 = equipos[equipos.indices.random()]
+            }
+        }
+
+        equipo2 = equipos[equipos.indices.random()]
+
+        while(equipo1.nombre == equipo2.nombre || sorteoOctavos.containsKey(equipo2) || sorteoOctavos.containsValue(equipo2)){
+            equipo2 = equipos[equipos.indices.random()]
+        }
+
+        sorteoOctavos[equipo1] = equipo2
+    }
+
+    sorteoOctavos.forEach { (eq1, eq2) ->
+        println("${eq1.nombre} - ${eq2.nombre}")
     }
 }
