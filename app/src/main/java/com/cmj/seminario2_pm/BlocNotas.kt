@@ -1,8 +1,7 @@
 package com.cmj.seminario2_pm
 
-class BlocNotas(
-    var listaNotas: MutableList<Nota>
-) {
+class BlocNotas{
+    var listaNotas = mutableListOf<Nota>()
     fun introducirNotas(nota: Nota){ listaNotas.add(nota) }
 
     fun eliminarNota(indice: Int){

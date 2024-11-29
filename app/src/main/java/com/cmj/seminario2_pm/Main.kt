@@ -439,6 +439,11 @@ fun main(){
             println(mates.dividir(4f, 5f))
         }
 
+        17 -> {
+            val pruebaNotas = Prueba()
+            pruebaNotas.realizarPruebas()
+        }
+
         19 -> {
             var guerrero = Guerrero("Guerrero", 400f, 50f, 1)
             var mago = Mago("Mago", 1600f, 150f, 1)
@@ -450,6 +455,10 @@ fun main(){
 
             println(guerrero)
             println(mago)
+        }
+
+        20 -> {
+
         }
     }
 }
