@@ -458,7 +458,60 @@ fun main(){
         }
 
         20 -> {
+            val listaJuegos = mutableListOf(
+                Videojuego("Minecraft", 2011, "PC"),
+                Videojuego("Dragon Ball Z: Kakarot", 2020, "PC"),
+                Videojuego("Undertale", 2015, "PC"),
+                Videojuego("Bayonetta", 2003, "PS3"),
+                Videojuego("The Last of Us", 2013, "PS3"),
+                Videojuego("Red Dead Redepmtion", 2010, "PS3"),
+                Videojuego("Road Fighter", 1985, "MSX"),
+                Videojuego("Knightmare", 1986, "MSX")
+            )
 
+            val listaFiltrada = filtarListaJuegos(listaJuegos, 1986, null)
+
+            for(juego in listaFiltrada){
+                println(juego)
+            }
+        }
+
+        21 -> {
+            val listaJuegos = mutableListOf(
+                Videojuego("Minecraft", 2011, "PC"),
+                Videojuego("Dragon Ball Z: Kakarot", 2020, "PC"),
+                Videojuego("Undertale", 2015, "PC"),
+                Videojuego("Bayonetta", 2003, "PS3"),
+                Videojuego("The Last of Us", 2013, "PS3"),
+                Videojuego("Red Dead Redepmtion", 2010, "PS3"),
+                Videojuego("Road Fighter", 1985, "MSX"),
+                Videojuego("Knightmare", 1986, "MSX")
+            )
+
+            val listaFiltrada = filtrarListaJuegos(listaJuegos, null, listOf("PC", "PS3"))
+
+            for(juego in listaFiltrada){
+                println(juego)
+            }
+        }
+
+        22 -> {
+            val listaJuegos = mutableListOf(
+                Videojuego("Minecraft", 2011, "PC"),
+                Videojuego("Dragon Ball Z: Kakarot", 2020, "PC"),
+                Videojuego("Undertale", 2015, "PC"),
+                Videojuego("Bayonetta", 2003, "PS3"),
+                Videojuego("The Last of Us", 2013, "PS3"),
+                Videojuego("Red Dead Redepmtion", 2010, "PS3"),
+                Videojuego("Road Fighter", 1985, "MSX"),
+                Videojuego("Knightmare", 1986, "MSX")
+            )
+
+            val cantidadJuegosPorPlataforma = cantidadJuegosSegunPlataforma(listaJuegos)
+
+            cantidadJuegosPorPlataforma.forEach { (plataforma, cantidad) ->
+                println("Cantidad de juegos en $plataforma: $cantidad")
+            }
         }
     }
 }
@@ -489,4 +542,42 @@ fun championsLeague(equipos: List<EquipoFutbol>){
     sorteoOctavos.forEach { (eq1, eq2) ->
         println("${eq1.nombre} - ${eq2.nombre}")
     }
+}
+
+fun filtarListaJuegos(listaJuegos: List<Videojuego>, anio: Int?, plataforma: String?): List<Videojuego>{
+    var listaJuegosFiltrada = mutableListOf<Videojuego>()
+
+    if(anio != null){
+        listaJuegosFiltrada.addAll(listaJuegos.filter { it.anio == anio})
+    }
+
+    if(plataforma != null){
+        listaJuegosFiltrada.addAll(listaJuegos.filter { it.plataforma == plataforma})
+    }
+
+    return listaJuegosFiltrada
+}
+
+fun filtrarListaJuegos(listaJuegos: List<Videojuego>, anios: List<Int>?, plataformas: List<String>?): List<Videojuego>{
+    var listaJuegosFiltrada = mutableListOf<Videojuego>()
+
+    if(anios != null){
+        listaJuegosFiltrada.addAll(listaJuegos.filter { anios.contains(it.anio) })
+    }
+
+    if(plataformas != null){
+        listaJuegosFiltrada.addAll(listaJuegos.filter { plataformas.contains(it.plataforma) })
+    }
+
+    return listaJuegosFiltrada
+}
+
+fun cantidadJuegosSegunPlataforma(listaJuegos: List<Videojuego>): Map<String, Int>{
+    val mapa = mutableMapOf<String, Int>()
+
+    listaJuegos.forEach { juego ->
+        mapa[juego.plataforma] = listaJuegos.count { juego.plataforma == it.plataforma }
+    }
+
+    return mapa
 }
