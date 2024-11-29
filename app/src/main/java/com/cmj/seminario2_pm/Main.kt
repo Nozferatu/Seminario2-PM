@@ -407,5 +407,18 @@ fun main(){
             println(mates.multiplicar(4, 5))
             println(mates.dividir(4f, 5f))
         }
+
+        19 -> {
+            var guerrero = Guerrero("Guerrero", 400f, 50f, 1)
+            var mago = Mago("Mago", 1600f, 150f, 1)
+
+            while(guerrero.pv < mago.pv){
+                guerrero.levelUp()
+                mago.levelUp()
+            }
+
+            println(guerrero)
+            println(mago)
+        }
     }
 }
